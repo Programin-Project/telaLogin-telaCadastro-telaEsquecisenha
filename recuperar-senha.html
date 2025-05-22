@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - Programin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'programin-blue': '#3170D7',
+                        'programin-light-blue': '#e7ecf8'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Adicionando fonte do Google Fonts para o logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex items-center justify-center" id="body">
+    <!-- Logo no canto superior esquerdo - agora clicável -->
+    <div class="logo-container">
+        <button id="logo-button" class="logo-button">
+            <h1 class="logo">Programin</h1>
+            <div id="stars-container" class="stars-container"></div>
+        </button>
+    </div>
+
+    <!-- Gradiente de fundo original (Projeto 1) - camada mais baixa -->
+    <div class="gradient-bg fixed top-0 left-0 w-full h-full -z-20"></div>
+
+    <!-- Novo elemento para o efeito de onda -->
+    <div id="wave-effect" class="fixed top-0 left-0 w-full h-full -z-15"></div>
+
+    <!-- Animação de chuva de código (Projeto 2) - camada intermediária -->
+    <div id="symbols-container" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-md mx-auto z-10 my-10 card-animation relative" id="login-card">
+        <!-- Switch de tema no canto superior direito -->
+        <div class="absolute top-4 right-4 flex items-center">
+            <span class="mr-2 text-sm text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </span>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="ml-2 text-sm text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </span>
+        </div>
+
+        <div class="px-10 py-8">
+            <h1 class="text-[#1a1f36] text-2xl font-semibold text-center mb-8 title-animation" id="login-title">Recuperar Senha</h1>
+            
+            <p class="text-gray-600 mb-6 text-center">Digite seu e-mail para receber um link de recuperação de senha.</p>
+            
+            <form id="recoverForm">
+                <div class="mb-5 form-group-animation">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none input-animation" required autofocus>
+                </div>
+                
+                <button type="submit" class="w-full bg-programin-blue text-white py-3 px-4 rounded-md hover:bg-opacity-90 transition-colors font-medium button-animation" style="animation-delay: 300ms;">
+                    Enviar Link de Recuperação
+                </button>
+                
+                <div class="mt-4 text-center">
+                    <a href="index.html" class="text-programin-blue hover:underline link-animation">Voltar para o login</a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="mt-6 py-4 px-10 bg-programin-light-blue rounded-b-lg text-center footer-animation" style="animation-delay: 800ms;" id="footer">
+            <p class="text-sm text-gray-600">
+                Novo na Programin? <a href="#" class="text-programin-blue hover:underline link-animation">Crie uma conta</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="recuperar-senha.js"></script>
+</body>
+</html>
